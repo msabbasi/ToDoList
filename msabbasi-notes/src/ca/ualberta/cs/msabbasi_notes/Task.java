@@ -37,6 +37,6 @@ public class Task implements Serializable {
 
 	@Override
 	public String toString() {
-		return taskDate + " | " + taskBody;
+		return taskBody;
 	}
 }

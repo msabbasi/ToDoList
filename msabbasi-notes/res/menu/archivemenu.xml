@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+
+    <item android:id="@+id/action_UnArchiveItems"
+          android:title="Unarchive Items..."
+          android:showAsAction="never"
+          android:onClick="unArchiveItems" />
+    <item android:id="@+id/action_RemoveArchiveItems"
+          android:title="Remove Items..."
+          android:showAsAction="never"
+          android:onClick="removeArchiveItems" />
+    <item android:id="@+id/action_EmailArchiveItems"
+          android:title="Email Items..."
+          android:showAsAction="never"
+          android:onClick="emailArchiveItems" />
+    
+    
+</menu>

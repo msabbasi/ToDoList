@@ -1,9 +1,24 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
-
-    <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:showAsAction="never"
-        android:title="@string/action_settings"/>
-
+    
+    <!-- Settings, should always be in the overflow -->
+    <item android:id="@+id/action_ViewArchive"
+          android:title="View Archive"
+          android:showAsAction="never"
+          android:onClick="displayArchive" />
+    <item android:id="@+id/action_ArchiveItems"
+          android:title="Archive Items..."
+          android:showAsAction="never"
+          android:onClick="archiveItems" />
+    <item android:id="@+id/action_RemoveItems"
+          android:title="Remove Items..."
+          android:showAsAction="never"
+          android:onClick="removeItems" />
+    <item android:id="@+id/action_EmailItems"
+          android:title="Email Items..."
+          android:showAsAction="never"
+          android:onClick="emailItems" />
+    <item android:id="@+id/action_Summary"
+          android:title="Summary"
+          android:showAsAction="never"
+          android:onClick="displaySummary"/>
 </menu>

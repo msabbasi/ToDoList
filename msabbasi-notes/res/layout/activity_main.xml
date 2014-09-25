@@ -5,8 +5,6 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >
 
-
-
     <ListView
         android:id="@+id/oldTasksList"
         android:layout_width="fill_parent"
@@ -21,41 +19,27 @@
         android:layout_width="wrap_content">
 
         <EditText
-            android:id="@+id/body"
+            android:id="@+id/editText"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_marginTop="10dp"
             android:ems="10"
             android:layout_toLeftOf="@+id/AddButton"
-            android:text="Add a task..."
             android:scrollbars="horizontal" >
             <requestFocus />
         </EditText>
         <Button android:text="Add"
          android:id="@+id/AddButton" 
-         android:textSize="18dp"
+         android:textSize="18sp"
          android:layout_marginTop="10dp" 
          android:layout_alignParentRight="true" 
          android:layout_height="wrap_content" 
-         android:layout_width="80dp">
+         android:layout_width="80dp"
+         android:onClick="save">
          </Button>
-         
     </RelativeLayout> 
     
-    <Button
-        android:id="@+id/clear"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/clear"
-        android:onClick="clear" />
 
-    <Button
-        android:id="@+id/save"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/save"
-        android:onClick="save" />
-    
 
 </LinearLayout>

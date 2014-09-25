@@ -7,6 +7,13 @@
     <string name="hello">Marios says:</string>
     <string name="save">Save</string>
     <string name="clear">Clear</string>
-    
-    
+    <string name="title_activity_summary">Summary</string>
+    <string name="title_activity_archive">Archive</string>
+    <string name="title_activity_email">Email Items</string>
+    <string name="title_activity_remove">Remove Items</string>
+    <string name="title_activity_archive_items">Archive Items</string>
+    <string name="title_activity_remove_archive_items">Remove Archive Items</string>
+    <string name="title_activity_email_archive">Email Archived Items</string>
+    <string name="title_activity_unarchive">Unarchive Items</string>
+
 </resources>
