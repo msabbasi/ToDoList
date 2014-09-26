@@ -25,6 +25,9 @@ LICENSE
 
 PIECES OF CODE USED FROM / SKELETONS OF CODE FROM
 
+https://github.com/abramhindle/student-picker
+  - Usage of intent
+
 https://github.com/guana/LonelyTwitter
   - Display and storage of lists obtained from text input
 
@@ -32,12 +35,11 @@ http://www.mysamplecode.com/2012/07/android-listview-checkbox-example.html
   - Use of listeners and a custom adapter to make selections
 
 
-
 ========
 
 INCLUDES
 
-	msabbasi Todo UML.bmp (in same directory as this README)
+	msabbasi Todo UML.bmp (in doc directory)
 	LICENSE (in same directory as this README)
 
 	Only one apk file included in the bin directory named msabbasi-notes.apk
