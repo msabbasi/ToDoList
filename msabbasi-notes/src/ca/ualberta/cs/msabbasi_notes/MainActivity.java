@@ -10,6 +10,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -19,12 +21,12 @@ import ca.ualberta.cs.msabbasi_notes.data.IDataManager;
 
 public class MainActivity extends Activity {
 
-	private IDataManager dataManager;
+	private IDataManager tasksManager;
 
 	private EditText bodyText;
 
 	private ListView oldTasksList;
-
+	
 	private ArrayList<Task> tasks;
 
 	private ArrayAdapter<Task> tasksViewAdapter;
@@ -36,7 +38,7 @@ public class MainActivity extends Activity {
 
 		setContentView(R.layout.activity_main);
 
-		dataManager = new FileDataManager(this);
+		tasksManager = new FileDataManager(this);
 
 		bodyText = (EditText) findViewById(R.id.editText);
 		oldTasksList = (ListView) findViewById(R.id.oldTasksList);
@@ -46,10 +48,30 @@ public class MainActivity extends Activity {
 	protected void onStart() {
 		super.onStart();
 
-		tasks = dataManager.loadTasks();
+		
+		tasks = tasksManager.loadTasks();
 		tasksViewAdapter = new ArrayAdapter<Task>(this,
 				R.layout.list_item, tasks);
 		oldTasksList.setAdapter(tasksViewAdapter);
+		
+		
+		oldTasksList.setOnItemClickListener(new OnItemClickListener() {
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+
+				Task Task = (Task) parent.getItemAtPosition(position);
+				if (Task.isChecked() == true){
+					Task.setChecked(false);
+				}
+				else {
+					Task.setChecked(true);
+				}
+				
+				tasksViewAdapter.notifyDataSetChanged();
+				tasksManager.saveTasks(tasks);
+								
+			}
+		});
 	}
 	
 	@Override
@@ -70,7 +92,7 @@ public class MainActivity extends Activity {
 		tasksViewAdapter.notifyDataSetChanged();
 
 		bodyText.setText("");
-		dataManager.saveTasks(tasks);
+		tasksManager.saveTasks(tasks);
 	}
 
 	public void displaySummary(MenuItem menu) {

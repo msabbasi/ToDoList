@@ -13,7 +13,8 @@ import ca.ualberta.cs.msabbasi_notes.Task;
 
 public class FileDataManager implements IDataManager{
 	
-	private static final String FILENAME = "file.sav";
+	private static final String TASKSFILENAME = "tasks.sav";
+	private static final String ARCHIVEFILENAME = "archive.sav";
 	
 	private Context ctx;
 	
@@ -25,13 +26,13 @@ public class FileDataManager implements IDataManager{
 		ArrayList<Task> lts = new ArrayList<Task>();
 
 		try {
-			FileInputStream fis = ctx.openFileInput(FILENAME);
+			FileInputStream fis = ctx.openFileInput(TASKSFILENAME);
 			ObjectInputStream ois = new ObjectInputStream(fis);
 
 			lts = (ArrayList<Task>) ois.readObject();
 
 		} catch (Exception e) {
-			Log.i("LonelyTwitter", "Error casting");
+			Log.i("msabbasi-notes", "Error casting");
 			e.printStackTrace();
 		} 
 
@@ -40,7 +41,7 @@ public class FileDataManager implements IDataManager{
 	
 	public void saveTasks(List<Task> lts) {
 		try {
-			FileOutputStream fos = ctx.openFileOutput(FILENAME, Context.MODE_PRIVATE);
+			FileOutputStream fos = ctx.openFileOutput(TASKSFILENAME, Context.MODE_PRIVATE);
 			ObjectOutputStream oos = new ObjectOutputStream(fos);
 			oos.writeObject(lts);
 			fos.close();
@@ -50,4 +51,34 @@ public class FileDataManager implements IDataManager{
 		}
 	}
 
+	public ArrayList<Task> loadArchiveTasks() {
+		ArrayList<Task> lts = new ArrayList<Task>();
+
+		try {
+			FileInputStream fis = ctx.openFileInput(ARCHIVEFILENAME);
+			ObjectInputStream ois = new ObjectInputStream(fis);
+
+			lts = (ArrayList<Task>) ois.readObject();
+
+		} catch (Exception e) {
+			Log.i("msabbasi-notes", "Error casting");
+			e.printStackTrace();
+		} 
+
+		return lts;
+	}
+	
+	public void saveArchiveTasks(List<Task> lts) {
+		try {
+			FileOutputStream fos = ctx.openFileOutput(ARCHIVEFILENAME, Context.MODE_PRIVATE);
+			ObjectOutputStream oos = new ObjectOutputStream(fos);
+			oos.writeObject(lts);
+			fos.close();
+		} 
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	
 }

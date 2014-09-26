@@ -9,14 +9,26 @@ public class NetworkDataManager implements IDataManager{
 
 	public ArrayList<Task> loadTasks() {
 		
-		// Sends tasks to the NSA
+		// Sends tasks
 		
 		return null;
 	}
 
 	public void saveTasks(List<Task> lts) {
 		
-		// Sends tweets to the NSA
+		// Sends tasks
+		
+	}
+
+	@Override
+	public ArrayList<Task> loadArchiveTasks() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void saveArchiveTasks(List<Task> lts) {
+		// TODO Auto-generated method stub
 		
 	}
 

@@ -10,5 +10,9 @@ public interface IDataManager {
 	public ArrayList<Task> loadTasks();
 	
 	public void saveTasks(List<Task> lts);
+	
+	public ArrayList<Task> loadArchiveTasks();
+	
+	public void saveArchiveTasks(List<Task> lts);
 
 }
