@@ -106,15 +106,18 @@ public class MainActivity extends Activity {
 
 	public void save(View v) {
 
-		String text = bodyText.getText().toString();
+		String text = bodyText.getText().toString().trim();
 
-		Task task = new Task(new Date(), text);
-		tasks.add(task);
+		if (!text.isEmpty()) {
+			Task task = new Task(text);
+			tasks.add(task);
 
-		tasksViewAdapter.notifyDataSetChanged();
+			tasksViewAdapter.notifyDataSetChanged();
+			tasksManager.saveTasks(tasks);
+		}
 
 		bodyText.setText("");
-		tasksManager.saveTasks(tasks);
+		
 	}
 
 	public void displaySummary(MenuItem menu) {

@@ -1,13 +1,11 @@
 package ca.ualberta.cs.msabbasi_notes;
 
 import java.io.Serializable;
-import java.util.Date;
 
 public class Task implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
-	private Date taskDate;
 	private String taskBody;
 	private boolean checked;
 	private boolean selected;
@@ -17,18 +15,11 @@ public class Task implements Serializable {
 		this.checked = false;
 	}
 
-	public Task(Date taskDate, String taskBody) {
-		this.taskDate = taskDate;
+	public Task(String taskBody) {
 		this.taskBody = taskBody;
+		this.checked = false;
 	}
 
-	public Date getTaskDate() {
-		return taskDate;
-	}
-
-	public void setTaskDate(Date taskDate) {
-		this.taskDate = taskDate;
-	}
 
 	public String getTaskBody() {
 		if (this.checked == true){
